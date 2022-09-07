@@ -353,7 +353,6 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="Stand-alone analysise code for FCC-hh events of type HH(bbWW)")
 	parser.add_argument('--input', '-i', metavar="INPUTFILE", dest="input_file", default=default_input_tester, help="Path to the input file. If not specified, runs over a default tester file.")
 	parser.add_argument('--output', '-o', metavar="OUTPUTDIR", dest="out_dir", default=default_out_dir, help="Output directory. If not specified, sets to current directory.")
-	parser.add_argument('--flavour', metavar="FLAVOUR", dest="flavour", default="DFOS", help="Flavour of the analysis: Select DFOS(=emu) or SFOS(=ee+mm) lepton pair. Default is DFOS.")
 	parser.add_argument('--nCPU', metavar="NCPU", dest="ncpus", default=4, help="Number of cores to use")
 	parser.add_argument('--debug', action="store_true", dest="do_debug", help="Run only over first 10 events for testing, also print debug ouput.")
 	args = parser.parse_args()
