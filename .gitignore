@@ -96,3 +96,6 @@ venv.bak/
 
 # Benchmarking
 benchmark*json
+
+#mac temp files
+._*
