@@ -177,7 +177,7 @@ class analysis():
 			########################################### MUONS ########################################### 
 			# all
 			.Alias("Muon0", "Muon#0.index")
-			.Define("muons",  "FCCAnalyses::ReconstructedParticle::get(Muon0, ReconstructedParticles)") #dont get it
+			.Define("muons",  "FCCAnalyses::ReconstructedParticle::get(Muon0, ReconstructedParticles)") 
 			.Define("n_muons",  "FCCAnalyses::ReconstructedParticle::get_n(muons)")
 			.Define("px_muons",  "FCCAnalyses::ReconstructedParticle::get_px(muons)")
 			.Define("py_muons",  "FCCAnalyses::ReconstructedParticle::get_py(muons)")
@@ -206,13 +206,83 @@ class analysis():
 			.Define("pT_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_pt(selected_muons)")
 			.Define("eta_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_eta(selected_muons)")
 
+
+			########################################### PHOTONS ########################################### 
+			.Alias("Photon0", "Photon#0.index") 
+			.Define("photons",  "FCCAnalyses::ReconstructedParticle::get(Photon0, ReconstructedParticles)") 
+			.Define("n_photons",  "FCCAnalyses::ReconstructedParticle::get_n(photons)") 
+			.Define("px_photons",  "FCCAnalyses::ReconstructedParticle::get_px(photons)")
+			.Define("py_photons",  "FCCAnalyses::ReconstructedParticle::get_py(photons)")
+			.Define("pz_photons",  "FCCAnalyses::ReconstructedParticle::get_pz(photons)")
+			.Define("E_photons",  "FCCAnalyses::ReconstructedParticle::get_e(photons)")
+			.Define("pT_photons",  "FCCAnalyses::ReconstructedParticle::get_pt(photons)")
+			.Define("eta_photons",  "FCCAnalyses::ReconstructedParticle::get_eta(photons)")
+
+			#isolated from b-jets - using the medium WP only for now!!
+			.Define("photons_iso", "AnalysisFCChh::sel_isolated(photons, b_tagged_jets_medium)")
+			.Define("n_photons_iso", "FCCAnalyses::ReconstructedParticle::get_n(photons_iso)")
+			.Define("px_photons_iso",  "FCCAnalyses::ReconstructedParticle::get_px(photons_iso)")
+			.Define("py_photons_iso",  "FCCAnalyses::ReconstructedParticle::get_py(photons_iso)")
+			.Define("pz_photons_iso",  "FCCAnalyses::ReconstructedParticle::get_pz(photons_iso)")
+			.Define("E_photons_iso",  "FCCAnalyses::ReconstructedParticle::get_e(photons_iso)")
+			.Define("pT_photons_iso",  "FCCAnalyses::ReconstructedParticle::get_pt(photons_iso)")
+			.Define("eta_photons_iso",  "FCCAnalyses::ReconstructedParticle::get_eta(photons_iso)")
+
+			#selection: isolated and above the pT threshold
+			.Define("selected_photons", "FCCAnalyses::ReconstructedParticle::sel_pt(20.)(photons_iso)")
+			.Define("n_photons_sel", "FCCAnalyses::ReconstructedParticle::get_n(selected_photons)") 
+			.Define("px_photons_sel",  "FCCAnalyses::ReconstructedParticle::get_px(selected_photons)")
+			.Define("py_photons_sel",  "FCCAnalyses::ReconstructedParticle::get_py(selected_photons)")
+			.Define("pz_photons_sel",  "FCCAnalyses::ReconstructedParticle::get_pz(selected_photons)")
+			.Define("E_photons_sel",  "FCCAnalyses::ReconstructedParticle::get_e(selected_photons)")
+			.Define("pT_photons_sel",  "FCCAnalyses::ReconstructedParticle::get_pt(selected_photons)")
+			.Define("eta_photons_sel",  "FCCAnalyses::ReconstructedParticle::get_eta(selected_photons)")
+
+
 			########################################### MET ########################################### 
 			.Define("MET", "FCCAnalyses::ReconstructedParticle::get_pt(MissingET)")
 			.Define("MET_x", "FCCAnalyses::ReconstructedParticle::get_px(MissingET)")
 			.Define("MET_y", "FCCAnalyses::ReconstructedParticle::get_py(MissingET)")
 			.Define("MET_phi", "FCCAnalyses::ReconstructedParticle::get_phi(MissingET)")
 
+			########################################### EVENT WIDE KINEMATIC VARIABLES########################################### 
 
+			#H(bb) system - using the medium WP b-jets only for now!! -> if the events has < 2 bjets these variables do not get filled!
+			.Define("bb_pairs_unmerged", "AnalysisFCChh::getPairs(b_tagged_jets_medium)") #currently gets only leading pT pair, as a RecoParticlePair
+			#get angles between the two bs:
+			.Define("dPhi_bb", "AnalysisFCChh::get_angularDist_pair(bb_pairs_unmerged, TString(\"dPhi\")) ")
+			.Define("dEta_bb", "AnalysisFCChh::get_angularDist_pair(bb_pairs_unmerged, TString(\"dEta\")) ")
+			.Define("dR_bb", "AnalysisFCChh::get_angularDist_pair(bb_pairs_unmerged, TString(\"dR\")) ")
+
+			#then merge the bb pair into one object and get its kinematic properties
+			.Define("bb_pairs", "AnalysisFCChh::merge_pairs(bb_pairs_unmerged)") #merge into one object to access inv masses etc
+			.Define("m_bb", "FCCAnalyses::ReconstructedParticle::get_mass(bb_pairs)")
+			.Define("px_Hbb_cand",  "FCCAnalyses::ReconstructedParticle::get_px(bb_pairs)")
+			.Define("py_Hbb_cand",  "FCCAnalyses::ReconstructedParticle::get_py(bb_pairs)")
+			.Define("pz_Hbb_cand",  "FCCAnalyses::ReconstructedParticle::get_pz(bb_pairs)")
+			.Define("E_Hbb_cand",  "FCCAnalyses::ReconstructedParticle::get_e(bb_pairs)")
+			.Define("pT_Hbb_cand",  "FCCAnalyses::ReconstructedParticle::get_pt(bb_pairs)")
+			.Define("eta_Hbb_cand",  "FCCAnalyses::ReconstructedParticle::get_eta(bb_pairs)")
+
+			#H(yy) if it exists, if there are no 2 selected photons, doesnt get filled 
+			.Define("yy_pairs_unmerged", "AnalysisFCChh::getPairs(selected_photons)")
+			.Define("yy_pairs", "AnalysisFCChh::merge_pairs(yy_pairs_unmerged)")
+			.Define("m_yy", "FCCAnalyses::ReconstructedParticle::get_mass(yy_pairs)")
+
+			#H(tau_h, tau_h) if it exists, if there are no 2 tau-jets, doesnt get filled -> using medium WP only !!
+			.Define("tauhtauh_pairs_unmerged", "AnalysisFCChh::getPairs(tau_tagged_jets_medium)")
+			.Define("tauhtauh_pairs", "AnalysisFCChh::merge_pairs(tauhtauh_pairs_unmerged)")
+			.Define("m_tauhtauh", "FCCAnalyses::ReconstructedParticle::get_mass(tauhtauh_pairs)")
+
+			#H(WW->emu+MET) if it exists,  if there is no emu pair, doesnt get filled 
+			.Define("OS_emu_pairs", "AnalysisFCChh::getDFOSPairs(selected_electrons, selected_muons)") #returns all possible pairs sorted by pT of the elecs and muons
+			.Define("n_OS_emu_pairs", "AnalysisFCChh::get_n_pairs(OS_emu_pairs)")
+
+			##select the leading pT DFOS pair only
+			.Define("OS_emu_pair_lead", "AnalysisFCChh::get_first_pair(OS_emu_pairs)")
+			.Define("H_2l_cand", "AnalysisFCChh::merge_pairs(OS_emu_pair_lead)")
+			.Define("m_ll", "FCCAnalyses::ReconstructedParticle::get_mass(H_2l_cand)")
+			.Define("dPhi_ll_MET", "AnalysisFCChh::get_angularDist_MET(H_2l_cand, MissingET, TString(\"dPhi\")) ")
 
 
 			)
@@ -222,27 +292,39 @@ class analysis():
 		branchList = ROOT.vector('string')()
 
 		for branchName in [
-			#Jets:
+			# Jets:
 			"n_jets", "px_jets", "py_jets", "pz_jets", "E_jets", "pT_jets", "eta_jets",
 			"n_jets_sel", "px_jets_sel", "py_jets_sel", "pz_jets_sel", "E_jets_sel", "pT_jets_sel", "eta_jets_sel",
-			#B-jets:
+			# B-jets:
 			"n_b_jets_loose", "px_b_jets_loose", "py_b_jets_loose", "pz_b_jets_loose", "E_b_jets_loose", "pT_b_jets_loose", "eta_b_jets_loose",
 			"n_b_jets_medium", "px_b_jets_medium", "py_b_jets_medium", "pz_b_jets_medium", "E_b_jets_medium", "pT_b_jets_medium", "eta_b_jets_medium",
 			"n_b_jets_tight", "px_b_jets_tight", "py_b_jets_tight", "pz_b_jets_tight", "E_b_jets_tight", "pT_b_jets_tight", "eta_b_jets_tight",
-			#Tau-jets:
+			# Tau-jets:
 			"n_tau_jets_loose", "px_tau_jets_loose", "py_tau_jets_loose", "pz_tau_jets_loose", "E_tau_jets_loose", "pT_tau_jets_loose", "eta_tau_jets_loose",
 			"n_tau_jets_medium", "px_tau_jets_medium", "py_tau_jets_medium", "pz_tau_jets_medium", "E_tau_jets_medium", "pT_tau_jets_medium", "eta_tau_jets_medium",
 			"n_tau_jets_tight", "px_tau_jets_tight", "py_tau_jets_tight", "pz_tau_jets_tight", "E_tau_jets_tight", "pT_tau_jets_tight", "eta_tau_jets_tight",
-			# #Electrons:
+			# Electrons:
 			"n_electrons", "px_electrons", "py_electrons", "pz_electrons", "E_electrons", "pT_electrons", "eta_electrons",
 			"n_electrons_iso", "px_electrons_iso", "py_electrons_iso", "pz_electrons_iso", "E_electrons_iso", "pT_electrons_iso", "eta_electrons_iso",
 			"n_electrons_sel", "px_electrons_sel", "py_electrons_sel", "pz_electrons_sel", "E_electrons_sel", "pT_electrons_sel", "eta_electrons_sel",
-			#Muons:
+			# Muons:
 			"n_muons", "px_muons", "py_muons", "pz_muons", "E_muons", "pT_muons", "eta_muons",
 			"n_muons_iso", "px_muons_iso", "py_muons_iso", "pz_muons_iso", "E_muons_iso", "pT_muons_iso", "eta_muons_iso",
 			"n_muons_sel", "px_muons_sel", "py_muons_sel", "pz_muons_sel", "E_muons_sel", "pT_muons_sel", "eta_muons_sel",
+			# Photons:
+			"n_photons", "px_photons", "py_photons", "pz_photons", "E_photons", "pT_photons", "eta_photons",
+			"n_photons_iso", "px_photons_iso", "py_photons_iso", "pz_photons_iso", "E_photons_iso", "pT_photons_iso", "eta_photons_iso",
+			"n_photons_sel", "px_photons_sel", "py_photons_sel", "pz_photons_sel", "E_photons_sel", "pT_photons_sel", "eta_photons_sel",
 			# ETMiss:
 			"MET","MET_x", "MET_y", "MET_phi",
+			# Hbb decay:
+			"m_bb", "px_Hbb_cand", "py_Hbb_cand", "pz_Hbb_cand", "E_Hbb_cand", "pT_Hbb_cand", "eta_Hbb_cand", "dPhi_bb", "dEta_bb", "dR_bb",
+			#Hyy decay:
+			"m_yy",
+			#H(tau_h, tau_h) decay:
+			"m_tauhtauh",
+			#H(WW->emu+MET) decay:
+			"n_OS_emu_pairs", "m_ll", "dPhi_ll_MET",
 
 			]:
 			branchList.push_back(branchName)
@@ -255,8 +337,9 @@ class analysis():
 #main function
 if __name__ == "__main__":
 
-	# default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbWW_tester_new_card.root" #locally produced bbWW tester
-	default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbtautau_tester_new_card.root" #locally produced bbtautau tester
+	default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbWW_tester_new_card.root" #locally produced bbWW tester
+	# default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbtautau_tester_new_card.root" #locally produced bbtautau tester
+	# default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbyy_tester_new_card.root" #locally produced bbyy tester
 	default_out_dir = "./"
 
 	#parse input arguments:
