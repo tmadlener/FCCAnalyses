@@ -13,6 +13,8 @@
 #include "edm4hep/MCParticleData.h"
 #include "podio/ObjectID.h"
 
+
+
 #include <iostream>
 
 namespace AnalysisFCChh{
@@ -90,6 +92,7 @@ namespace AnalysisFCChh{
 
 	//make a general pair, not caring about charges, e.g. the two b-jets
 	ROOT::VecOps::RVec<RecoParticlePair> getPairs(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles_in);
+	ROOT::VecOps::RVec<RecoParticlePair> getPair_sublead(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles_in);
 
 	//btags
 	ROOT::VecOps::RVec<bool> getJet_tag(ROOT::VecOps::RVec<int> index, ROOT::VecOps::RVec<edm4hep::ParticleIDData> pid, ROOT::VecOps::RVec<float> values, int algoIndex);

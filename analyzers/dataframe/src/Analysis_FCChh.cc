@@ -1,6 +1,6 @@
 #include "FCCAnalyses/Analysis_FCChh.h"
-#include "FCCAnalyses/ReconstructedParticle2MC.h"
 #include "FCCAnalyses/lester_mt2_bisect.h"
+
 
 #include <iostream>
 
@@ -854,7 +854,7 @@ ROOT::VecOps::RVec<RecoParticlePair> AnalysisFCChh::getDFOSPairs(ROOT::VecOps::R
 
 }
 
-//build all pairs from the input particles
+//build all pairs from the input particles -> this returns the pair made of pT leading particles!!!
 ROOT::VecOps::RVec<RecoParticlePair> AnalysisFCChh::getPairs(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles_in){
 
 	ROOT::VecOps::RVec<RecoParticlePair> pairs;
@@ -883,6 +883,34 @@ ROOT::VecOps::RVec<RecoParticlePair> AnalysisFCChh::getPairs(ROOT::VecOps::RVec<
 		RecoParticlePair pair;
 		pair.particle_1 = particles_in.at(0);
 		pair.particle_2 = particles_in.at(1);
+
+		pairs.push_back(pair);
+
+	}
+
+	return pairs;
+
+}
+
+
+//make the subleading pair, ie. from particles 3 and 4 in pT order
+ROOT::VecOps::RVec<RecoParticlePair> AnalysisFCChh::getPair_sublead(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles_in){
+
+	ROOT::VecOps::RVec<RecoParticlePair> pairs;
+
+	//need at least 2 particles in the input
+	if (particles_in.size() < 4){ return pairs; }
+
+	//else sort them by pT, and take the only the subleading pair
+	else {
+		auto sort_by_pT = [&] (edm4hep::ReconstructedParticleData part_i ,edm4hep::ReconstructedParticleData part_j) { return ( getTLV_reco(part_i).Pt() > getTLV_reco(part_j).Pt() ); };
+    	std::sort(particles_in.begin(), particles_in.end(), sort_by_pT);
+
+
+		//new method, dont merge the pair
+		RecoParticlePair pair;
+		pair.particle_1 = particles_in.at(2);
+		pair.particle_2 = particles_in.at(3);
 
 		pairs.push_back(pair);
 

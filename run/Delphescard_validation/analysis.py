@@ -284,6 +284,11 @@ class analysis():
 			.Define("m_ll", "FCCAnalyses::ReconstructedParticle::get_mass(H_2l_cand)")
 			.Define("dPhi_ll_MET", "AnalysisFCChh::get_angularDist_MET(H_2l_cand, MissingET, TString(\"dPhi\")) ")
 
+			#second H(bb) system for 4b signals - if event has < 4 b-jets does not get filled - using medium WP
+			.Define("sub_bb_pairs_unmerged", "AnalysisFCChh::getPair_sublead(b_tagged_jets_medium)") #just using the b-jets in order of pT
+			.Define("sub_b_pairs", "AnalysisFCChh::merge_pairs(sub_bb_pairs_unmerged)") #merge into one object to access inv masses etc
+			.Define("m_bb_sub", "FCCAnalyses::ReconstructedParticle::get_mass(sub_b_pairs)")
+
 
 			)
 
@@ -319,6 +324,7 @@ class analysis():
 			"MET","MET_x", "MET_y", "MET_phi",
 			# Hbb decay:
 			"m_bb", "px_Hbb_cand", "py_Hbb_cand", "pz_Hbb_cand", "E_Hbb_cand", "pT_Hbb_cand", "eta_Hbb_cand", "dPhi_bb", "dEta_bb", "dR_bb",
+			"m_bb_sub", #mass of subleading pair 
 			#Hyy decay:
 			"m_yy",
 			#H(tau_h, tau_h) decay:
@@ -337,7 +343,8 @@ class analysis():
 #main function
 if __name__ == "__main__":
 
-	default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbWW_tester_new_card.root" #locally produced bbWW tester
+	default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbbb_tester_new_card.root" #locally produced 4b tester
+	# default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbWW_tester_new_card.root" #locally produced bbWW tester
 	# default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbtautau_tester_new_card.root" #locally produced bbtautau tester
 	# default_input_tester = "/eos/user/b/bistapf/FCChh_EvtGen/pwp8_pp_hh_5f_hhbbyy_tester_new_card.root" #locally produced bbyy tester
 	default_out_dir = "./"
