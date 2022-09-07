@@ -142,6 +142,70 @@ class analysis():
 			.Define("pT_tau_jets_tight", "FCCAnalyses::ReconstructedParticle::get_pt(tau_tagged_jets_tight)")
 			.Define("eta_tau_jets_tight", "FCCAnalyses::ReconstructedParticle::get_eta(tau_tagged_jets_tight)")
 
+			########################################### ELECTRONS ########################################### 
+			#all
+			.Alias("Electron0", "Electron#0.index")
+			.Define("electrons",  "FCCAnalyses::ReconstructedParticle::get(Electron0, ReconstructedParticles)")
+			.Define("n_electrons",  "FCCAnalyses::ReconstructedParticle::get_n(electrons)")
+			.Define("px_electrons",  "FCCAnalyses::ReconstructedParticle::get_px(electrons)")
+			.Define("py_electrons",  "FCCAnalyses::ReconstructedParticle::get_py(electrons)")
+			.Define("pz_electrons",  "FCCAnalyses::ReconstructedParticle::get_pz(electrons)")
+			.Define("E_electrons",  "FCCAnalyses::ReconstructedParticle::get_e(electrons)")
+			.Define("pT_electrons",  "FCCAnalyses::ReconstructedParticle::get_pt(electrons)")
+			.Define("eta_electrons",  "FCCAnalyses::ReconstructedParticle::get_eta(electrons)")
+
+			#isolated from b-jets - using the medium WP only for now!!
+			.Define("electrons_iso", "AnalysisFCChh::sel_isolated(electrons, b_tagged_jets_medium)")
+			.Define("n_electrons_iso", "FCCAnalyses::ReconstructedParticle::get_n(electrons_iso)")
+			.Define("px_electrons_iso",  "FCCAnalyses::ReconstructedParticle::get_px(electrons_iso)")
+			.Define("py_electrons_iso",  "FCCAnalyses::ReconstructedParticle::get_py(electrons_iso)")
+			.Define("pz_electrons_iso",  "FCCAnalyses::ReconstructedParticle::get_pz(electrons_iso)")
+			.Define("E_electrons_iso",  "FCCAnalyses::ReconstructedParticle::get_e(electrons_iso)")
+			.Define("pT_electrons_iso",  "FCCAnalyses::ReconstructedParticle::get_pt(electrons_iso)")
+			.Define("eta_electrons_iso",  "FCCAnalyses::ReconstructedParticle::get_eta(electrons_iso)")
+
+			#selection: isolated and above the pT threshold
+			.Define("selected_electrons", "FCCAnalyses::ReconstructedParticle::sel_pt(10.)(electrons_iso)")
+			.Define("n_electrons_sel", "FCCAnalyses::ReconstructedParticle::get_n(selected_electrons)") 
+			.Define("px_electrons_sel",  "FCCAnalyses::ReconstructedParticle::get_px(selected_electrons)")
+			.Define("py_electrons_sel",  "FCCAnalyses::ReconstructedParticle::get_py(selected_electrons)")
+			.Define("pz_electrons_sel",  "FCCAnalyses::ReconstructedParticle::get_pz(selected_electrons)")
+			.Define("E_electrons_sel",  "FCCAnalyses::ReconstructedParticle::get_e(selected_electrons)")
+			.Define("pT_electrons_sel",  "FCCAnalyses::ReconstructedParticle::get_pt(selected_electrons)")
+			.Define("eta_electrons_sel",  "FCCAnalyses::ReconstructedParticle::get_eta(selected_electrons)")
+
+			########################################### MUONS ########################################### 
+			# all
+			.Alias("Muon0", "Muon#0.index")
+			.Define("muons",  "FCCAnalyses::ReconstructedParticle::get(Muon0, ReconstructedParticles)") #dont get it
+			.Define("n_muons",  "FCCAnalyses::ReconstructedParticle::get_n(muons)")
+			.Define("px_muons",  "FCCAnalyses::ReconstructedParticle::get_px(muons)")
+			.Define("py_muons",  "FCCAnalyses::ReconstructedParticle::get_py(muons)")
+			.Define("pz_muons",  "FCCAnalyses::ReconstructedParticle::get_pz(muons)")
+			.Define("E_muons",  "FCCAnalyses::ReconstructedParticle::get_e(muons)")
+			.Define("pT_muons",  "FCCAnalyses::ReconstructedParticle::get_pt(muons)")
+			.Define("eta_muons",  "FCCAnalyses::ReconstructedParticle::get_eta(muons)")
+
+			#isolated from b-jets - using the medium WP only for now!!
+			.Define("muons_iso", "AnalysisFCChh::sel_isolated(muons, b_tagged_jets_medium)")
+			.Define("n_muons_iso", "FCCAnalyses::ReconstructedParticle::get_n(muons_iso)")
+			.Define("px_muons_iso",  "FCCAnalyses::ReconstructedParticle::get_px(muons_iso)")
+			.Define("py_muons_iso",  "FCCAnalyses::ReconstructedParticle::get_py(muons_iso)")
+			.Define("pz_muons_iso",  "FCCAnalyses::ReconstructedParticle::get_pz(muons_iso)")
+			.Define("E_muons_iso",  "FCCAnalyses::ReconstructedParticle::get_e(muons_iso)")
+			.Define("pT_muons_iso",  "FCCAnalyses::ReconstructedParticle::get_pt(muons_iso)")
+			.Define("eta_muons_iso",  "FCCAnalyses::ReconstructedParticle::get_eta(muons_iso)")
+
+			#selection: isolated and above the pT threshold
+			.Define("selected_muons", "FCCAnalyses::ReconstructedParticle::sel_pt(10.)(muons_iso)")
+			.Define("n_muons_sel", "FCCAnalyses::ReconstructedParticle::get_n(selected_muons)") 
+			.Define("px_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_px(selected_muons)")
+			.Define("py_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_py(selected_muons)")
+			.Define("pz_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_pz(selected_muons)")
+			.Define("E_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_e(selected_muons)")
+			.Define("pT_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_pt(selected_muons)")
+			.Define("eta_muons_sel",  "FCCAnalyses::ReconstructedParticle::get_eta(selected_muons)")
+
 
 
 
@@ -163,6 +227,16 @@ class analysis():
 			"n_tau_jets_loose", "px_tau_jets_loose", "py_tau_jets_loose", "pz_tau_jets_loose", "E_tau_jets_loose", "pT_tau_jets_loose", "eta_tau_jets_loose",
 			"n_tau_jets_medium", "px_tau_jets_medium", "py_tau_jets_medium", "pz_tau_jets_medium", "E_tau_jets_medium", "pT_tau_jets_medium", "eta_tau_jets_medium",
 			"n_tau_jets_tight", "px_tau_jets_tight", "py_tau_jets_tight", "pz_tau_jets_tight", "E_tau_jets_tight", "pT_tau_jets_tight", "eta_tau_jets_tight",
+			# #Electrons:
+			"n_electrons", "px_electrons", "py_electrons", "pz_electrons", "E_electrons", "pT_electrons", "eta_electrons",
+			"n_electrons_iso", "px_electrons_iso", "py_electrons_iso", "pz_electrons_iso", "E_electrons_iso", "pT_electrons_iso", "eta_electrons_iso",
+			"n_electrons_sel", "px_electrons_sel", "py_electrons_sel", "pz_electrons_sel", "E_electrons_sel", "pT_electrons_sel", "eta_electrons_sel",
+			#Muons:
+			"n_muons", "px_muons", "py_muons", "pz_muons", "E_muons", "pT_muons", "eta_muons",
+			"n_muons_iso", "px_muons_iso", "py_muons_iso", "pz_muons_iso", "E_muons_iso", "pT_muons_iso", "eta_muons_iso",
+			"n_muons_sel", "px_muons_sel", "py_muons_sel", "pz_muons_sel", "E_muons_sel", "pT_muons_sel", "eta_muons_sel",
+			# ETMiss:
+			"MET","MET_x", "MET_y", "MET_phi",
 
 			]:
 			branchList.push_back(branchName)
