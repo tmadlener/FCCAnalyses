@@ -7,6 +7,8 @@ Check out this fork of the FCCAnalyses framework and switch to the branch called
 ``` 
 git clone git@github.com:bistapf/FCCAnalyses.git
 
+cd FCCAnalyses/
+
 git checkout FCChh_HH_analyses
 ``` 
 
