@@ -1,8 +1,16 @@
-#FCCAnalyses scripts to produce ntuples from the EDM4HEP files produced for the validation of new Delphes card 
+# FCCAnalyses scripts to produce ntuples from the EDM4HEP files produced for the validation of new Delphes card 
 
 ## Setting up 
 
-Check out this fork of the FCCAnalyses framework and switch to the branch called "FCChh_HH_analyses". Then compile the code as described in the main readme: 
+Check out this fork of the FCCAnalyses framework and switch to the branch called "FCChh_HH_analyses":
+
+``` 
+git clone git@github.com:bistapf/FCCAnalyses.git
+
+git checkout FCChh_HH_analyses
+``` 
+
+Then compile the code as described in the main readme: 
 
 ```shell
 source ./setup.sh
@@ -28,7 +36,7 @@ Different python scripts are then used to steer the different steps of the examp
 
 Please note that the examples here are simplified versions compared to and out-of-synch with the main FW repo. 
 
-##Adding new variables to the ntuples 
+## Adding new variables to the ntuples 
 To add a new variable/branch to the output ntuples check if a C++ function to calculate it exists, e.g. the stransverse mass mT2 calculation is available in `Analysis_FCChh`. If it does you just need to add a new line to the `analysis.py` RDF definition block, e.g. `Define("mT2", "AnalysisFCChh::get_mT2(<particles1>, <particles2>, <MET>)")`.
 
 If it doesn't you can add the required calculation to the `Analysis_FCChh` (or make an additional C++ library) and recompile. 
