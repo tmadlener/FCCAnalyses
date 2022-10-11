@@ -15,7 +15,7 @@ git checkout FCChh_HH_analyses
 Then compile the code as described in the main readme: 
 
 ```shell
-source ./setup.sh
+source setup.sh
 mkdir build install
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=../install
