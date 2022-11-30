@@ -4,6 +4,5 @@ var searchData=
   ['weaverinterface_2ecc_1',['WeaverInterface.cc',['../_weaver_interface_8cc.html',1,'']]],
   ['weaverinterface_2eh_2',['WeaverInterface.h',['../_weaver_interface_8h.html',1,'']]],
   ['weaverutils_2ecc_3',['WeaverUtils.cc',['../_weaver_utils_8cc.html',1,'']]],
-  ['weaverutils_2eh_4',['WeaverUtils.h',['../_weaver_utils_8h.html',1,'']]],
-  ['wwlvlvfilter_5',['WWlvlvFilter',['../namespace_analysis_f_c_chh.html#aec34ae2a8f64991fb8c0b559e058c259',1,'AnalysisFCChh']]]
+  ['weaverutils_2eh_4',['WeaverUtils.h',['../_weaver_utils_8h.html',1,'']]]
 ];
