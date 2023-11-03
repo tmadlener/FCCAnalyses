@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1699016198605,
+  "lastUpdate": 1699016200796,
   "repoUrl": "https://github.com/tmadlener/FCCAnalyses",
   "entries": {
     "Benchmark": [
@@ -378,6 +378,60 @@ window.BENCHMARK_DATA = {
             "unit": "Seconds",
             "range": 10,
             "extra": "Analysis path: examples/FCCee/vertex_lcfiplus/analysis_V0.py"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "thomas.madlener@desy.de",
+            "name": "tmadlener",
+            "username": "tmadlener"
+          },
+          "committer": {
+            "email": "thomas.madlener@desy.de",
+            "name": "tmadlener",
+            "username": "tmadlener"
+          },
+          "distinct": true,
+          "id": "a25fb0e204b980bfc5c885e6cca86c4d624aa952",
+          "message": "Ensure compatibility with latest ACTS versions\n\n- Switch from Sym to Square matrix types (introduced in v29)\n- Pass pion hypothesis to track param constructor (introduced in v30)",
+          "timestamp": "2023-11-03T13:36:20+01:00",
+          "tree_id": "4567c8803d8e574d7762308cce4b948e6d99b7ca",
+          "url": "https://github.com/tmadlener/FCCAnalyses/commit/a25fb0e204b980bfc5c885e6cca86c4d624aa952"
+        },
+        "date": 1699016199849,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "nightly | Events processed per second: examples/FCCee/weaver/analysis_inference.py",
+            "value": 1.953083071375379,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "nightly | Events processed per second: case-studies/analysis_example/scripts/analysis_example.py",
+            "value": 7.44240899670574,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "nightly | Events processed per second: examples/FCCee/higgs/mH-recoil/mumu/analysis_stage1.py",
+            "value": 6.648266010147524,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "nightly | Events processed per second: examples/FCCee/flavour/Bc2TauNu/analysis_B2TauNu_truth.py",
+            "value": 5.144891048207226,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "nightly | Events processed per second: examples/FCCee/test/jet_constituents.py",
+            "value": 6.565059311027398,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "nightly | Events processed per second: examples/FCCee/vertex_lcfiplus/analysis_V0.py",
+            "value": 2.424902697280357,
+            "unit": "Evt/s"
           }
         ]
       }
