@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1706877025475,
+  "lastUpdate": 1706877026662,
   "repoUrl": "https://github.com/tmadlener/FCCAnalyses",
   "entries": {
     "Benchmark": [
@@ -498,6 +498,60 @@ window.BENCHMARK_DATA = {
             "unit": "Seconds",
             "range": 10,
             "extra": "Analysis path: examples/FCCee/vertex_lcfiplus/analysis_V0.py"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "thomas.madlener@desy.de",
+            "name": "tmadlener",
+            "username": "tmadlener"
+          },
+          "committer": {
+            "email": "thomas.madlener@desy.de",
+            "name": "tmadlener",
+            "username": "tmadlener"
+          },
+          "distinct": true,
+          "id": "cb7b6c3d9408f374f4de7f73cbeab891632b0ad3",
+          "message": "Prepare for upcoming renaming and interface introduction\n\nAliasing the current edm4hep::TrackerHitData to\nedm4hep::TrackerHit3DData in case the latter is not yet available.\nDirectly using that if it is available.",
+          "timestamp": "2024-02-02T13:22:36+01:00",
+          "tree_id": "8134fbfc72f8611250666c602ae22d3003b25090",
+          "url": "https://github.com/tmadlener/FCCAnalyses/commit/cb7b6c3d9408f374f4de7f73cbeab891632b0ad3"
+        },
+        "date": 1706877026306,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "prod | Events processed per second: examples/FCCee/weaver/analysis_inference.py",
+            "value": 3.101420555442796,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "prod | Events processed per second: case-studies/analysis_example/scripts/analysis_example.py",
+            "value": 9.926783092245248,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "prod | Events processed per second: examples/FCCee/higgs/mH-recoil/mumu/analysis_stage1.py",
+            "value": 8.858407624656472,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "prod | Events processed per second: examples/FCCee/flavour/Bc2TauNu/analysis_B2TauNu_truth.py",
+            "value": 6.892824204292709,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "prod | Events processed per second: examples/FCCee/test/jet_constituents.py",
+            "value": 9.04310371666616,
+            "unit": "Evt/s"
+          },
+          {
+            "name": "prod | Events processed per second: examples/FCCee/vertex_lcfiplus/analysis_V0.py",
+            "value": 3.1694642604725707,
+            "unit": "Evt/s"
           }
         ]
       }
