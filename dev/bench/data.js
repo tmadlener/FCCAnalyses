@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1706877067408,
+  "lastUpdate": 1708611705694,
   "repoUrl": "https://github.com/tmadlener/FCCAnalyses",
   "entries": {
     "Benchmark": [
@@ -672,6 +672,72 @@ window.BENCHMARK_DATA = {
             "name": "nightly | Events processed per second: examples/FCCee/vertex_lcfiplus/analysis_V0.py",
             "value": 3.253234989029776,
             "unit": "Evt/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "thomas.madlener@desy.de",
+            "name": "tmadlener",
+            "username": "tmadlener"
+          },
+          "committer": {
+            "email": "thomas.madlener@desy.de",
+            "name": "tmadlener",
+            "username": "tmadlener"
+          },
+          "distinct": true,
+          "id": "ab2be40653835f755a04ba5b39ffeb1a0d954cd0",
+          "message": "Prepare for upcoming renaming and interface introduction\n\nAliasing the current edm4hep::TrackerHitData to\nedm4hep::TrackerHit3DData in case the latter is not yet available.\nDirectly using that if it is available.",
+          "timestamp": "2024-02-22T15:14:18+01:00",
+          "tree_id": "a022e17ed1e778617b9a9d84573efcead79698cc",
+          "url": "https://github.com/tmadlener/FCCAnalyses/commit/ab2be40653835f755a04ba5b39ffeb1a0d954cd0"
+        },
+        "date": 1708611704556,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "prod | Time spent running the analysis: examples/FCCee/weaver/analysis_inference.py",
+            "value": 33.720242738723755,
+            "unit": "Seconds",
+            "range": 10,
+            "extra": "Analysis path: examples/FCCee/weaver/analysis_inference.py"
+          },
+          {
+            "name": "prod | Time spent running the analysis: case-studies/analysis_example/scripts/analysis_example.py",
+            "value": 9.930862188339233,
+            "unit": "Seconds",
+            "range": 10,
+            "extra": "Analysis path: case-studies/analysis_example/scripts/analysis_example.py"
+          },
+          {
+            "name": "prod | Time spent running the analysis: examples/FCCee/higgs/mH-recoil/mumu/analysis_stage1.py",
+            "value": 11.24549150466919,
+            "unit": "Seconds",
+            "range": 10,
+            "extra": "Analysis path: examples/FCCee/higgs/mH-recoil/mumu/analysis_stage1.py"
+          },
+          {
+            "name": "prod | Time spent running the analysis: examples/FCCee/flavour/Bc2TauNu/analysis_B2TauNu_truth.py",
+            "value": 14.414894580841064,
+            "unit": "Seconds",
+            "range": 10,
+            "extra": "Analysis path: examples/FCCee/flavour/Bc2TauNu/analysis_B2TauNu_truth.py"
+          },
+          {
+            "name": "prod | Time spent running the analysis: examples/FCCee/test/jet_constituents.py",
+            "value": 11.262835502624512,
+            "unit": "Seconds",
+            "range": 10,
+            "extra": "Analysis path: examples/FCCee/test/jet_constituents.py"
+          },
+          {
+            "name": "prod | Time spent running the analysis: examples/FCCee/vertex_lcfiplus/analysis_V0.py",
+            "value": 31.69573664665222,
+            "unit": "Seconds",
+            "range": 10,
+            "extra": "Analysis path: examples/FCCee/vertex_lcfiplus/analysis_V0.py"
           }
         ]
       }
