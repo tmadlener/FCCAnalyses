@@ -2,7 +2,7 @@ var searchData=
 [
   ['gamma_0',['gamma',['../classcontrib_1_1_valencia_plugin.html#ad8b8c24f55904e1f4c8eac5c1c5d0402',1,'contrib::ValenciaPlugin::gamma()'],['../classcontrib_1_1_valencia_info.html#af78cbe09edcd473fbffc71b6c82b892a',1,'contrib::ValenciaInfo::gamma()']]],
   ['gamma_5f_1',['gamma_',['../classcontrib_1_1_valencia_info.html#a2f938a04000ce805914da463f0f84420',1,'contrib::ValenciaInfo']]],
-  ['generalities_2',['Generalities',['../index.html#autotoc_md4',1,'']]],
+  ['generated_20samples_2',['Pre-generated Samples',['../index.html#autotoc_md2',1,'']]],
   ['get_3',['get',['../namespace_f_c_c_analyses_1_1_reconstructed_particle.html#ae59881aa2caf5152af31e287b59aef23',1,'FCCAnalyses::ReconstructedParticle']]],
   ['get_5fall_5fsvs_4',['get_all_SVs',['../namespace_f_c_c_analyses_1_1_vertexing_utils.html#ab5914113fb17efbd18019564e8a8accc',1,'FCCAnalyses::VertexingUtils']]],
   ['get_5fall_5fvertices_5',['get_all_vertices',['../namespace_f_c_c_analyses_1_1_vertexing_utils.html#ad810d413e152f141a7f99d7d20f584ca',1,'FCCAnalyses::VertexingUtils::get_all_vertices(FCCAnalysesVertex PV, ROOT::VecOps::RVec&lt; ROOT::VecOps::RVec&lt; FCCAnalysesVertex &gt; &gt; SV)'],['../namespace_f_c_c_analyses_1_1_vertexing_utils.html#a4e2916ff220d21bfa3fcea78b739c08a',1,'FCCAnalyses::VertexingUtils::get_all_vertices(FCCAnalysesVertex PV, ROOT::VecOps::RVec&lt; FCCAnalysesVertex &gt; SV)']]],
@@ -157,7 +157,7 @@ var searchData=
   ['get_5ftanlambda_5fd0_5fcov_154',['get_tanlambda_d0_cov',['../namespace_f_c_c_analyses_1_1_jet_constituents_utils.html#a628f6c4806796fd32ad2ab840c4485d7',1,'FCCAnalyses::JetConstituentsUtils']]],
   ['get_5ftanlambda_5fphi0_5fcov_155',['get_tanlambda_phi0_cov',['../namespace_f_c_c_analyses_1_1_jet_constituents_utils.html#a5a1bc79253a1594da376e521380b46d6',1,'FCCAnalyses::JetConstituentsUtils']]],
   ['get_5ftanlambda_5fz0_5fcov_156',['get_tanlambda_z0_cov',['../namespace_f_c_c_analyses_1_1_jet_constituents_utils.html#a3f4919bbfdc3e4385cd6c71a4e349d7a',1,'FCCAnalyses::JetConstituentsUtils']]],
-  ['get_5ftheta_157',['get_theta',['../namespace_f_c_c_analyses_1_1_jet_constituents_utils.html#a2045fed2e83e9a5257f3707d144caa8b',1,'FCCAnalyses::JetConstituentsUtils::get_theta()'],['../namespace_f_c_c_analyses_1_1_reconstructed_particle.html#ac08bd102c77a2ea6d2403a216f3ab8a8',1,'FCCAnalyses::ReconstructedParticle::get_theta()'],['../namespace_f_c_c_analyses_1_1_m_c_particle.html#a4f65523ac52d988ed14b29db3acf897e',1,'FCCAnalyses::MCParticle::get_theta()'],['../namespace_f_c_c_analyses_1_1_jet_clustering_utils.html#a6877af1c186b3d0bd851489ff144512f',1,'FCCAnalyses::JetClusteringUtils::get_theta()']]],
+  ['get_5ftheta_157',['get_theta',['../namespace_f_c_c_analyses_1_1_jet_clustering_utils.html#a6877af1c186b3d0bd851489ff144512f',1,'FCCAnalyses::JetClusteringUtils::get_theta()'],['../namespace_f_c_c_analyses_1_1_reconstructed_particle.html#ac08bd102c77a2ea6d2403a216f3ab8a8',1,'FCCAnalyses::ReconstructedParticle::get_theta()'],['../namespace_f_c_c_analyses_1_1_m_c_particle.html#a4f65523ac52d988ed14b29db3acf897e',1,'FCCAnalyses::MCParticle::get_theta()'],['../namespace_f_c_c_analyses_1_1_jet_constituents_utils.html#a2045fed2e83e9a5257f3707d144caa8b',1,'FCCAnalyses::JetConstituentsUtils::get_theta()']]],
   ['get_5ftheta_5fsv_158',['get_theta_sv',['../namespace_f_c_c_analyses_1_1_vertexing_utils.html#a62cdd77a5739f2a36a022204ca086e8f',1,'FCCAnalyses::VertexingUtils::get_theta_SV(ROOT::VecOps::RVec&lt; ROOT::VecOps::RVec&lt; FCCAnalysesVertex &gt; &gt; vertices)'],['../namespace_f_c_c_analyses_1_1_vertexing_utils.html#a7a15b387440f90eabc11182c19ac125a',1,'FCCAnalyses::VertexingUtils::get_theta_SV(ROOT::VecOps::RVec&lt; FCCAnalysesVertex &gt; vertices)']]],
   ['get_5fthetarel_159',['get_thetarel',['../namespace_f_c_c_analyses_1_1_jet_constituents_utils.html#a1147c1c06613c6c5f34475f47e94a01f',1,'FCCAnalyses::JetConstituentsUtils']]],
   ['get_5fthetarel_5fcluster_160',['get_thetarel_cluster',['../namespace_f_c_c_analyses_1_1_jet_constituents_utils.html#a844385b824d911253835766837f61383',1,'FCCAnalyses::JetConstituentsUtils']]],
@@ -316,11 +316,10 @@ var searchData=
   ['getsimparticlesecondaries_5fz_313',['getSimParticleSecondaries_z',['../namespace_f_c_c_analyses_1_1_calo_ntupleizer.html#ae6c935dcfe36b3b2165bd5720770fafd',1,'FCCAnalyses::CaloNtupleizer']]],
   ['getsize_314',['getsize',['../namespace_f_c_c_analyses_1_1_utils.html#a0e7ffefde1cf7b9533f0a198771ad954',1,'FCCAnalyses::Utils']]],
   ['getthrustpointing_315',['getthrustpointing',['../struct_f_c_c_analyses_1_1_algorithms_1_1get_thrust_pointing.html#a3158649230762e956e23b7080f78591d',1,'FCCAnalyses::Algorithms::getThrustPointing::getThrustPointing()'],['../struct_f_c_c_analyses_1_1_algorithms_1_1get_thrust_pointing.html',1,'FCCAnalyses::Algorithms::getThrustPointing']]],
-  ['getting_20started_316',['Getting started',['../index.html#autotoc_md3',1,'']]],
-  ['gettk_5fn_317',['getTK_n',['../namespace_f_c_c_analyses_1_1_reconstructed_particle2_track.html#a83619e1141b1402c3191ce44f7d42f01',1,'FCCAnalyses::ReconstructedParticle2Track']]],
-  ['gettrack2mc_5findex_318',['getTrack2MC_index',['../namespace_f_c_c_analyses_1_1_reconstructed_particle2_m_c.html#ae79d0f72844901237362d370fd60dd16',1,'FCCAnalyses::ReconstructedParticle2MC']]],
-  ['globalmm_319',['globalmm',['../namespace_f_c_c_analyses_1_1my_utils.html#acb83e14905e0e5a24e422db97849c32f',1,'FCCAnalyses::myUtils']]],
-  ['gmother_5find_320',['gmother_ind',['../struct_f_c_c_analyses_1_1_vertexing_utils_1_1_f_c_c_analyses_vertex_m_c.html#a58bc47d2f1c4aef3cddf0ddfe91c0bdd',1,'FCCAnalyses::VertexingUtils::FCCAnalysesVertexMC']]],
-  ['gweaver2_321',['gWeaver2',['../namespace_f_c_c_analyses.html#a297716b181abd8c1c5f0f1cd079876bf',1,'FCCAnalyses']]],
-  ['gweavers_322',['gWeavers',['../namespace_f_c_c_analyses.html#a3fed8fa694d7905bd9ad079e81b58ef4',1,'FCCAnalyses']]]
+  ['gettk_5fn_316',['getTK_n',['../namespace_f_c_c_analyses_1_1_reconstructed_particle2_track.html#a83619e1141b1402c3191ce44f7d42f01',1,'FCCAnalyses::ReconstructedParticle2Track']]],
+  ['gettrack2mc_5findex_317',['getTrack2MC_index',['../namespace_f_c_c_analyses_1_1_reconstructed_particle2_m_c.html#ae79d0f72844901237362d370fd60dd16',1,'FCCAnalyses::ReconstructedParticle2MC']]],
+  ['globalmm_318',['globalmm',['../namespace_f_c_c_analyses_1_1my_utils.html#acb83e14905e0e5a24e422db97849c32f',1,'FCCAnalyses::myUtils']]],
+  ['gmother_5find_319',['gmother_ind',['../struct_f_c_c_analyses_1_1_vertexing_utils_1_1_f_c_c_analyses_vertex_m_c.html#a58bc47d2f1c4aef3cddf0ddfe91c0bdd',1,'FCCAnalyses::VertexingUtils::FCCAnalysesVertexMC']]],
+  ['gweaver2_320',['gWeaver2',['../namespace_f_c_c_analyses.html#a297716b181abd8c1c5f0f1cd079876bf',1,'FCCAnalyses']]],
+  ['gweavers_321',['gWeavers',['../namespace_f_c_c_analyses.html#a3fed8fa694d7905bd9ad079e81b58ef4',1,'FCCAnalyses']]]
 ];
